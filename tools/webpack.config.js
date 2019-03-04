@@ -1,5 +1,4 @@
-const webpack = require('webpack')
-const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { resolve, getEnv } = require('./utils')
 
@@ -54,6 +53,7 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
+          getEnv() === 'production' ? MiniCssExtractPlugin.loader : 'vue-style-loader',
           'vue-style-loader',
           'css-loader',
           'sass-loader'
@@ -61,7 +61,14 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new VueLoaderPlugin()
-  ]
+  ].concat(new MiniCssExtractPlugin({
+    filename: 'style.css'
+  }))
 }

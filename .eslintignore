@@ -1,0 +1,4 @@
+tools/*
+documents/*
+node_modules/*
+dist/*
