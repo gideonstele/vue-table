@@ -1,0 +1,10 @@
+examples/
+documents/
+tests/
+babel.config.js
+jest.config.js
+.editorconfig
+.browserslistrc
+.eslintrc.js
+.eslintignore
+postcss.config.js

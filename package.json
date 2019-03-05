@@ -10,7 +10,10 @@
   },
   "repository": "https://github.com/shijinyu/vue-table",
   "license": "MIT",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "peerDependencies": {
     "vue": ">=2.6",
     "vue-template-compiler": ">=2.6"

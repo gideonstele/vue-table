@@ -14,3 +14,11 @@
 
  - 排序
  - 过滤
+
+## 安装和使用
+
+```shell
+npm install 
+# or 
+yarn add 
+```
