@@ -1,5 +1,8 @@
 module.exports = {
   presets: [
-    '@babel/env'
+    '@babel/env',
+    ['babel-preset-vue', {
+      'eventModifiers': false
+    }]
   ]
 }

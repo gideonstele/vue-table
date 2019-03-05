@@ -15,11 +15,18 @@ module.exports = merge(baseConfig, {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: path.resolve(__dirname, '../dist'),
     port: 9001
   }
 })

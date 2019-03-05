@@ -4,28 +4,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  context: path.resolve(__dirname),
+  context: path.resolve(__dirname, '../'),
   entry: {
-    index: path.resolve(__dirname ,'./src/index.js')
+    index: './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
     library: 'VueTable'
   },
   externals: {
-      vue: {
-      commonjs: 'vue',
-      commonjs2: 'vue',
-      amd: 'vue',
-      root: 'vue'
-    }
+    // vue: {
+    //   commonjs: 'vue',
+    //   commonjs2: 'vue',
+    //   amd: 'vue',
+    //   root: 'Vue'
+    // }
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'ctable': '../dist/index.js'
+      '@table': '../../dist'
     }
   },
   module: {
@@ -61,7 +61,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './public/index.html'),
+      template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html'
     })
   ]

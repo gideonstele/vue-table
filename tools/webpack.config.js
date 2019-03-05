@@ -9,8 +9,9 @@ module.exports = {
   },
   output: {
     path: resolve('./dist'),
-    filename: getEnv() === 'production' ? '[name].js' : '[name]-dev.js',
-    library: 'VueTable'
+    filename: '[name].js',
+    library: 'VueTable',
+    libraryTarget: 'umd'
   },
   externals: {
       vue: {
@@ -21,7 +22,7 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.jsx', '.vue', '.json', '.scss'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
@@ -53,8 +54,7 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
-          getEnv() === 'production' ? MiniCssExtractPlugin.loader : 'vue-style-loader',
-          'vue-style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -67,8 +67,9 @@ module.exports = {
     }
   },
   plugins: [
-    new VueLoaderPlugin()
-  ].concat(new MiniCssExtractPlugin({
-    filename: 'style.css'
-  }))
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    })
+  ]
 }
