@@ -1,34 +1,16 @@
-# vue-table
+# Vue Table
 
-## Project setup
-```
-npm install
-```
+一个基于 Vue.js 的 Table 组件
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 介绍
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### 特点
 
-### Run your tests
-```
-npm run test
-```
+ - 可以自定义每列的渲染
+ - 可以定义跨行
+ - 可以固定左右列
 
-### Lints and fixes files
-```
-npm run lint
-```
+**待完成**
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ - 排序
+ - 过滤
